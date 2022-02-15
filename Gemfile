@@ -7,6 +7,7 @@ group :development, :test do
 end
 
 gem "sinatra"
+gem 'pg'
 gem "sinatra-contrib"
 gem "rspec"
 gem "capybara"
