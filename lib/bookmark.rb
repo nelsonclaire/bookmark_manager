@@ -1,6 +1,15 @@
 require 'pg'
 
 class Bookmark
+
+  attr_reader :id, :title, :url
+
+  def initialize(id:, title:, url:)
+    @id = id
+    @title = title
+    @url = url
+  end
+
   def self.all
 
     result = DatabaseConnection.query('SELECT * FROM bookmarks')
@@ -10,7 +19,7 @@ class Bookmark
   end
 
   def self.create(url:, title:)
-
+    return nil unless is_url?(url)
     # The first argument is our SQL query template
     # The second argument is the 'params' referred to in exec_params
     # $1 refers to the first item in the params array
@@ -43,11 +52,10 @@ class Bookmark
  
   end
 
-  attr_reader :id, :title, :url
+private
 
-  def initialize(id:, title:, url:)
-    @id = id
-    @title = title
-    @url = url
+  def self.is_url?(url)
+    url =~ /\A#{URI::regexp(['http', 'https'])}\z/
   end
+
 end
