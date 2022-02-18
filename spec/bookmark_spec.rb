@@ -1,6 +1,8 @@
 require 'bookmark'
 require 'database_helpers'
 require 'uri'
+require 'tag'
+require 'bookmark_tag'
 
 describe Bookmark do
   describe '.all' do
@@ -104,5 +106,4 @@ describe Bookmark do
       bookmark.tags(tag_class)
     end
   end
-  
 end

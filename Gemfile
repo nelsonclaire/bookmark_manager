@@ -13,3 +13,4 @@ gem "sinatra-contrib"
 gem "rspec"
 gem "capybara"
 gem "simplecov"
+gem 'bcrypt'

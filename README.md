@@ -61,10 +61,22 @@ So that I can keep my account secure
 I want to sign out
 ```
 
+## Domain and class Model
+
+Below is a domain and class model for the bookmarks model.
 
 ![Class Model](/public/ClassModel.png)
 
 ![Domain Model](/public/DomainModel.png)
+
+## Entity Relationship Diagram
+
+The below diagram indicates that:
+- A Bookmark *has many* Comments
+- A Comment *belongs to* a Bookmark
+
+![Entity Relationship Model](/public/EntityRelationshipModel.png)
+
 
 ## How to use
 
@@ -99,6 +111,7 @@ To set up the appropriate tables, connect to each database in `psql` and run the
   * 03_create_comments_table.sql
   * 04_create_tags_table.sql
   * 05_create_bookmarks_tags_table.sql
+  * 06_create_users_table.sql
 
 ### To run the Bookmark Manager app:
 
