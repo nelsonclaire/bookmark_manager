@@ -33,4 +33,7 @@ I want to update a bookmark
 - Create the production database using the psql command CREATE DATABASE bookmark_manager;
 - Create the test database using the psql command CREATE DATABASE bookmark_manager_test;
 - Connect to the database using the pqsl command \c bookmark_manager;
-- Run the query saved in the file 01_create_bookmarks_table.sql
+- Run the following files in db/migrations in the following order
+  * 01_create_bookmarks_table.sql
+  * 02_add_title_to_bookmarks.sql
+  * 03_create_comments_table.sql
