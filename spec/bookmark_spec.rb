@@ -77,6 +77,7 @@ describe Bookmark do
   end
 
   let(:comment_class) { double(:comment_class) }
+  let(:tag_class) { double(:tag_class) }
 
   describe '#comments' do
     it 'calls .where on the Comment class' do
@@ -94,4 +95,14 @@ describe Bookmark do
       expect(bookmark.comments.first.text).to eq 'Test Comment'
     end
   end
+
+  describe '#tags' do
+    it 'calls .where on the Tag class' do
+      bookmark = Bookmark.create(title: 'Makers Academy', url: 'http://www.makersacademy.com')
+      expect(tag_class).to receive(:where).with(bookmark_id: bookmark.id)
+
+      bookmark.tags(tag_class)
+    end
+  end
+  
 end
