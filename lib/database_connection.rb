@@ -13,4 +13,3 @@ class DatabaseConnection
     @connection.exec_params(sql, params)
   end
 end
-

@@ -11,7 +11,9 @@ class Tag
 
   def self.where(bookmark_id:)
     result = DatabaseConnection.query(
-      "SELECT id, content FROM bookmarks_tags INNER JOIN tags ON tags.id = bookmarks_tags.tag_id WHERE bookmarks_tags.bookmark_id = $1;",
+      "SELECT id, content FROM bookmarks_tags
+      INNER JOIN tags ON tags.id = bookmarks_tags.tag_id
+      WHERE bookmarks_tags.bookmark_id = $1;",
       [bookmark_id]
     )
     result.map do |tag|

@@ -90,10 +90,11 @@ class BookmarkManager < Sinatra::Base
     user = User.authenticate(email: params[:email], password: params[:password])
     if user
       session[:user_id] = user.id
-           redirect('/bookmarks')
+      p "go to bookmarks"
+      redirect('/bookmarks')
     else
       flash[:notice] = 'Please check your email or password.'
-            redirect('/sessions/new')
+      redirect('/sessions/new')
     end
   end
 
@@ -105,4 +106,3 @@ class BookmarkManager < Sinatra::Base
 
   run! if app_file == $0
 end
-

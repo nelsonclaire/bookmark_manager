@@ -116,10 +116,10 @@ To set up the appropriate tables, connect to each database in `psql` and run the
 ### To run the Bookmark Manager app:
 
 ```
-rackup -p 3000
+rackup
 ```
 
-To view bookmarks, navigate to `localhost:3000/bookmarks`.
+To view bookmarks, navigate to `localhost:9292/bookmarks`.
 
 ### To run tests:
 
