@@ -14,3 +14,4 @@ gem "rspec"
 gem "capybara"
 gem "simplecov"
 gem 'bcrypt'
+gem 'rake'
